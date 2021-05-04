@@ -1,0 +1,12 @@
+version: "3.8"
+
+services: 
+    server:
+        build: .
+        volumes: 
+            - ./:\app
+            - /app/node_modules
+        ports: 
+            - "5000:5000"
+        environment: 
+            - NODE_PORT=5000

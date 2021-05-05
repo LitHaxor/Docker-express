@@ -4,7 +4,12 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm install
+ARG NODE_ENV
+
+RUN if [ "$NODE_ENV" = "dev" ]; \
+        then yarn install; \
+        else npm install --only=production; \
+        fi
 
 COPY . .
 

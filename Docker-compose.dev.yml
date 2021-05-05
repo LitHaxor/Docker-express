@@ -1,0 +1,14 @@
+version: "3.8"
+
+services: 
+    ts-app:
+        build:
+            context: .
+            args: 
+                NODE_ENV: dev
+        volumes: 
+            - ./:/app
+            - /app/node_modules
+        environment: 
+            - NODE_ENV=dev
+        command: yarn run start:dev

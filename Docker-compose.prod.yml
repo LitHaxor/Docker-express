@@ -1,0 +1,11 @@
+version: "3.8"
+
+services: 
+    ts-app:
+        build:
+            context: .
+            args: 
+                NODE_ENV: prod
+        environment: 
+            - NODE_ENV=production
+        command: yarn start

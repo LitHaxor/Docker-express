@@ -13,6 +13,9 @@ services:
             - PG_PASS=${DB_PW}
             - PG_PORT=${DB_PORT}
             - PG_DB=${DB_NAME}
+            - REDIS_URL=${RD_URL}
+            - REDIS_PORT=${RD_PORT}
+            - SECRET=${SECRET}
         depends_on: 
             - postgres-db
     postgres-db:
@@ -21,5 +24,11 @@ services:
             POSTGRES_PASSWORD: admin
         volumes: 
             - /data:/var/lib/postgresql/data
+    redis:
+        image: redis:6.2.3-alpine
+        volumes: 
+            - redis-data:/usr/local/etc/redis
+
 volumes: 
     pg-data:
+    redis-data:

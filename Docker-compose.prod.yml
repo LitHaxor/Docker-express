@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 
 services: 
     nginx:
@@ -11,4 +11,5 @@ services:
                 NODE_ENV: prod
         environment: 
             - NODE_ENV=production
+            - 
         command: yarn start

@@ -1,11 +1,9 @@
 import express from 'express'
 import { deleteOnePost, getAllPost, getOnePost, setOnePost, updateOnePost } from '../controllers/postController'
+import protect from '../middlewares/authMiddleware'
 import postModel from '../models/postModel'
-
 const postRouter = express.Router()
-
 postRouter.use('/seed', postModel)
-
 postRouter.get('/',getAllPost)
 postRouter.get('/:id',getOnePost)
 postRouter.post('/', setOnePost)

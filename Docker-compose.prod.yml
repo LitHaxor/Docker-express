@@ -4,8 +4,11 @@ services:
     nginx:
         ports:
             - "80:80"
-            
     ts-app:
+        build:
+            context: .
+            args: 
+                NODE_ENV: prod
         environment: 
             - NODE_ENV=production
         command: yarn start

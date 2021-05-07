@@ -41,6 +41,7 @@ app.use(express.json())
 app.get('/api', (req,res)=>{
     res.status(200).json({
         status: 'success',
+        cicd: 'success',
         database: connectionString || 'n/a',
     })
 })

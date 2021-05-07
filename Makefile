@@ -8,3 +8,5 @@ down:
 	docker-compose down
 scale:
 	docker-compose -f Docker-compose.yml -f Docker-compose.dev.yml up -d --scale ts-app=2
+cd:
+	docker-compose -f Docker-compose.yml -f Docker-compose.prod.yml -d --build --no-deps ts-app

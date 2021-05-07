@@ -8,7 +8,6 @@ services:
         ports: 
             - "5000:80"
     ts-app:
-        build: .
         image: lithasan/ts-docker-express
         environment: 
             - NODE_PORT=5000

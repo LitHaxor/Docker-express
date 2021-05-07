@@ -4,6 +4,7 @@ services:
     nginx:
         ports:
             - "80:80"
+            
     ts-app:
         environment: 
             - NODE_ENV=production
